@@ -16,10 +16,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Unifdef is useful for removing ifdefed lines from a file while
-otherwise leaving the file alone. Unifdef acts on #ifdef, #ifndef,
-#else, and #endif lines, and it knows only enough about C and C++ to
-know when one of these is inactive because it is inside a comment, or
-a single or double quote.
+otherwise leaving the file alone. Unifdef acts on '#ifdef', '#ifndef',
+'#else', and '#endif' lines, and it knows only enough about C and C++
+to know when one of these is inactive because it is inside a comment,
+or a single or double quote.
 
 %prep
 %setup -q
