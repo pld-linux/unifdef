@@ -1,0 +1,7 @@
+AUTOMAKE_OPTIONS = foreign
+
+bin_PROGRAMS    = unifdef
+unifdef_SOURCES = unifdef.c
+               
+man_MANS = unifdef.1
+EXTRA_DIST = $(man_MANS) README LICENSE
