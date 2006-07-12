@@ -10,6 +10,8 @@ Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-codecleanup.diff
 Source1:	%{name}-Makefile.am
 Source2:	%{name}-configure.ac
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
