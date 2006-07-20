@@ -1,4 +1,5 @@
 Summary:	Unifdef tool for removing ifdef'd lines
+Summary(pl):	Narzêdzie unifdef do usuwania linii oznaczonych ifdef
 Name:		unifdef
 Version:	1.0
 Release:	0.1
@@ -20,6 +21,13 @@ otherwise leaving the file alone. Unifdef acts on '#ifdef', '#ifndef',
 '#else', and '#endif' lines, and it knows only enough about C and C++
 to know when one of these is inactive because it is inside a comment,
 or a single or double quote.
+
+%description -l pl
+unifdef jest przydatny do usuwania linii oznaczonych ifdef z pliku
+pozostawiaj±c resztê pliku w spokoju. unifdef dzia³a na liniach
+'#ifdef', '#ifndef', '#else' i '#endif' i wie o C i C++ tylko tyle,
+¿eby odró¿niæ, kiedy która¶ z tych dyrektyw jest nieaktywna, poniewa¿
+jest wewn±trz komentarza lub cudzys³owów.
 
 %prep
 %setup -q
