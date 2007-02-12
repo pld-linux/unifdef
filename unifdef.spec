@@ -1,5 +1,5 @@
 Summary:	Unifdef tool for removing ifdef'd lines
-Summary(pl.UTF-8):   Narzędzie unifdef do usuwania linii oznaczonych ifdef
+Summary(pl.UTF-8):	Narzędzie unifdef do usuwania linii oznaczonych ifdef
 Name:		unifdef
 Version:	1.0
 Release:	0.1
