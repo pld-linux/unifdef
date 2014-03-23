@@ -1,18 +1,18 @@
 Summary:	Unifdef tool for removing ifdef'd lines
 Summary(pl.UTF-8):	Narzędzie unifdef do usuwania linii oznaczonych ifdef
 Name:		unifdef
-Version:	1.0
-Release:	0.1
+Version:	2.10
+Release:	1
 License:	BSD
 Group:		Development/Languages
-#Source0:	http://www.cs.cmu.edu/~ajw/dist/%{name}-%{version}.tar.gz
-Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	825240622f35c7b002f11ece1af4ba22
-Patch0:		%{name}-codecleanup.diff
-Source1:	%{name}-Makefile.am
-Source2:	%{name}-configure.ac
+Source0:	http://dotat.at/prog/unifdef/%{name}-%{version}.tar.xz
+# Source0-md5:	bb5d895e5ebbba5c5cc0c2771cf97ebe
+URL:		http://dotat.at/prog/unifdef/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,23 +31,15 @@ jest wewnątrz komentarza lub cudzysłowów.
 
 %prep
 %setup -q
-rm -f Makefile unifdef *.o
-cp %{SOURCE1} Makefile.am
-cp %{SOURCE2} configure.ac
-%patch0
 
 %build
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
-%configure
 %{__make} \
 	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
+	prefix=%{_prefix} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -56,4 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/unifdef
+%attr(755,root,root) %{_bindir}/unifdefall
 %{_mandir}/man1/unifdef.1*
+%{_mandir}/man1/unifdefall.1*
