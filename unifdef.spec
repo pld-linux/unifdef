@@ -1,15 +1,13 @@
 Summary:	Unifdef tool for removing ifdef'd lines
 Summary(pl.UTF-8):	Narzędzie unifdef do usuwania linii oznaczonych ifdef
 Name:		unifdef
-Version:	2.10
+Version:	2.12
 Release:	1
 License:	BSD
 Group:		Development/Languages
-Source0:	http://dotat.at/prog/unifdef/%{name}-%{version}.tar.xz
-# Source0-md5:	bb5d895e5ebbba5c5cc0c2771cf97ebe
-URL:		http://dotat.at/prog/unifdef/
-BuildRequires:	autoconf
-BuildRequires:	automake
+Source0:	https://dotat.at/prog/unifdef/%{name}-%{version}.tar.xz
+# Source0-md5:	ae8c0b3b4c43c1f6bc5f32412a820818
+URL:		https://dotat.at/prog/unifdef/
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -38,6 +36,7 @@ jest wewnątrz komentarza lub cudzysłowów.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	prefix=%{_prefix} \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -47,6 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc COPYING Changelog README
 %attr(755,root,root) %{_bindir}/unifdef
 %attr(755,root,root) %{_bindir}/unifdefall
 %{_mandir}/man1/unifdef.1*
